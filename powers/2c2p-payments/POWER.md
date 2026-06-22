@@ -1,5 +1,5 @@
 ---
-name: "2C2P Payments"
+name: "2c2p-payments"
 displayName: "2C2P Payments"
 description: "Integration guide for 2C2P. Accept cards, digital wallets, QR payments, and alternative payment methods across Southeast Asia via Hosted Payment Page, Direct API, Web SDK, QuickPay links, and shopping cart plugins."
 keywords: ["2c2p", "payments", "gateway", "api", "integration", "quickpay", "paymentlink", "checkout", "pgw"]
