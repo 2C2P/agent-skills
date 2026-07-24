@@ -1,0 +1,31 @@
+{
+  "name": "2c2p-payments",
+  "version": "0.1.0",
+  "description": "Integrate 2C2P Payment Gateway — accept cards, wallets, QR payments across Southeast Asia",
+  "author": {
+    "name": "2C2P",
+    "email": "developer@2c2p.com"
+  },
+  "homepage": "https://developer.2c2p.com/docs/",
+  "repository": "https://github.com/2C2P/agent-skills",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "2C2P Payments",
+    "shortDescription": "Integrate 2C2P Payment Gateway with AI-assisted Vibe Coding.",
+    "longDescription": "Guide developers through integrating 2C2P Payment Gateway — from sandbox setup to production deployment. Covers Hosted Payment Page, Direct API, QuickPay links, Web/Mobile SDK, and shopping cart plugins across Southeast Asia.",
+    "developerName": "2C2P",
+    "category": "Productivity",
+    "capabilities": [
+      "payment-integration",
+      "quickpay-link",
+      "hosted-payment-page",
+      "direct-api",
+      "mobile-sdk",
+      "web-sdk",
+      "refunds",
+      "recurring-payments"
+    ],
+    "defaultPrompt": "Help me integrate 2C2P payment gateway into my project."
+  }
+}
