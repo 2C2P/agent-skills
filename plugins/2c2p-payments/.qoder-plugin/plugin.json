@@ -1,0 +1,31 @@
+{
+  "name": "2c2p-payments",
+  "displayName": "2C2P Payments",
+  "version": "0.1.0",
+  "description": "Guide developers through 2C2P payment gateway integration — accept cards, digital wallets, QR payments, and alternative payment methods across Southeast Asia.",
+  "author": {
+    "name": "2C2P",
+    "email": "developer@2c2p.com"
+  },
+  "homepage": "https://developer.2c2p.com/docs/",
+  "repository": "https://github.com/2C2P/agent-skills",
+  "license": "MIT",
+  "logo": "./assets/avatar.svg",
+  "keywords": [
+    "qoder-plugin",
+    "skill",
+    "2c2p",
+    "payments",
+    "gateway",
+    "checkout",
+    "quickpay",
+    "southeast-asia"
+  ],
+  "category": "developer-tools",
+  "tags": [
+    "skill",
+    "payments",
+    "integration"
+  ],
+  "skills": "./skills/"
+}
