@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect width="128" height="128" rx="24" fill="#1a1a2e"/>
+  <text x="64" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff">2C2P</text>
+  <text x="64" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#4fc3f7">Payments</text>
+</svg>
