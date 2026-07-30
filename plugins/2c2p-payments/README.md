@@ -1,10 +1,10 @@
-# 2C2P Payments — Qoder Plugin
+# 2C2P Payments — AI Plugin
 
-A Qoder skill that guides developers through integrating with the **2C2P Payment Gateway** — from sandbox setup to production deployment. Covers all integration methods: Hosted Payment Page, Direct API, Web SDK, Mobile SDK, QuickPay links, and shopping cart plugins.
+A skill that guides developers through integrating with the **2C2P Payment Gateway** — from sandbox setup to production deployment. Covers all integration methods: Hosted Payment Page, Direct API, Web SDK, Mobile SDK, QuickPay links, and shopping cart plugins.
 
 ## Platform Support
 
-This directory is packaged as both a **Codex** plugin (`.codex-plugin/plugin.json`) and a **Qoder** plugin (`.qoder-plugin/plugin.json`). The two manifests coexist; each IDE reads only its own manifest file.
+This directory is packaged for **Codex** (`.codex-plugin/plugin.json`), **Qoder** (`.qoder-plugin/plugin.json`), and **Cursor** (`.cursor-plugin/plugin.json`). The manifests coexist; each IDE reads only its own manifest file.
 
 ## Source Provenance
 
@@ -53,6 +53,22 @@ No external dependencies are required. All documentation is self-contained in th
 ## Logo
 
 Placeholder SVG avatar generated for this plugin. Replace with the official 2C2P logo if available.
+
+## Installation (Cursor)
+
+Run the installer hosted on the 2C2P developer portal:
+
+```bash
+curl -fsSL https://developer.2c2p.com/plugins/install-cursor.sh | bash
+```
+
+Or install manually:
+
+1. Download `2c2p-payments-0.1.0.zip` from https://developer.2c2p.com/plugins/
+2. Extract the skill to `~/.cursor/skills/2c2p-payments/`
+3. Restart Cursor or reload the window
+
+For team distribution, import the repository as a Cursor Team Marketplace from **Dashboard → Settings → Plugins → Team Marketplaces → Import**.
 
 ## Installation (Qoder)
 
