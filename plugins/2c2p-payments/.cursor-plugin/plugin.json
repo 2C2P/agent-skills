@@ -1,0 +1,16 @@
+{
+  "name": "2c2p-payments",
+  "displayName": "2C2P Payments",
+  "version": "0.1.0",
+  "description": "Integrate 2C2P Payment Gateway — accept cards, wallets, QR payments across Southeast Asia",
+  "author": {
+    "name": "2C2P",
+    "email": "developer@2c2p.com"
+  },
+  "homepage": "https://developer.2c2p.com/docs/",
+  "repository": "https://github.com/2C2P/agent-skills",
+  "license": "MIT",
+  "keywords": ["2c2p", "payments", "gateway", "integration", "quickpay"],
+  "logo": "assets/avatar.svg",
+  "skills": "./skills/"
+}

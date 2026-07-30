@@ -1,0 +1,22 @@
+{
+  "name": "2c2p-ai-tools",
+  "displayName": "2C2P AI Tools",
+  "owner": {
+    "name": "2C2P",
+    "email": "developer@2c2p.com"
+  },
+  "metadata": {
+    "description": "AI-assisted tools for 2C2P payment gateway integration",
+    "version": "0.1.0",
+    "pluginRoot": "plugins"
+  },
+  "plugins": [
+    {
+      "name": "2c2p-payments",
+      "source": "2c2p-payments",
+      "description": "Guide developers through 2C2P Payment Gateway integration",
+      "category": "Productivity",
+      "keywords": ["payments", "2c2p", "gateway"]
+    }
+  ]
+}
