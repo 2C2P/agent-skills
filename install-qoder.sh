@@ -4,7 +4,7 @@
 
 set -e
 
-PLUGIN_URL="https://developer.2c2p.com/plugins/2c2p-payments-0.1.0.zip"
+PLUGIN_URL="https://raw.githubusercontent.com/2C2P/agent-skills/main/2c2p-payments-0.1.0.zip"
 PLUGIN_NAME="2c2p-payments"
 INSTALL_DIR="${HOME}/.qoder/plugins/${PLUGIN_NAME}"
 TMP_DIR="$(mktemp -d)"
