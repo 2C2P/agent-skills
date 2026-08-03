@@ -11,6 +11,6 @@
   "repository": "https://github.com/2C2P/agent-skills",
   "license": "MIT",
   "keywords": ["2c2p", "payments", "gateway", "integration", "quickpay"],
-  "logo": "assets/avatar.svg",
+  "logo": "assets/logo-square.png",
   "skills": "./skills/"
 }
