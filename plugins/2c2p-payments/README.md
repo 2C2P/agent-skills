@@ -56,15 +56,13 @@ Placeholder SVG avatar generated for this plugin. Replace with the official 2C2P
 
 ## Installation (Cursor)
 
-Run the installer hosted on the 2C2P developer portal:
-
 ```bash
-curl -fsSL https://developer.2c2p.com/plugins/install-cursor.sh | bash
+curl -fsSL https://raw.githubusercontent.com/2C2P/agent-skills/main/install-cursor.sh | bash
 ```
 
 Or install manually:
 
-1. Download `2c2p-payments-0.1.0.zip` from https://developer.2c2p.com/plugins/
+1. Download `2c2p-payments-0.1.0.zip` from https://github.com/2C2P/agent-skills
 2. Extract the skill to `~/.cursor/skills/2c2p-payments/`
 3. Restart Cursor or reload the window
 
@@ -72,14 +70,27 @@ For team distribution, import the repository as a Cursor Team Marketplace from *
 
 ## Installation (Qoder)
 
-Run the installer hosted on the 2C2P developer portal:
-
 ```bash
-curl -fsSL https://developer.2c2p.com/plugins/install-qoder.sh | bash
+curl -fsSL https://raw.githubusercontent.com/2C2P/agent-skills/main/install-qoder.sh | bash
 ```
 
 Or install manually:
 
-1. Download `2c2p-payments-0.1.0.zip` from https://developer.2c2p.com/plugins/
+1. Download `2c2p-payments-0.1.0.zip` from https://github.com/2C2P/agent-skills
 2. Extract it to `~/.qoder/plugins/2c2p-payments/`
 3. Restart Qoder or reload the workspace
+
+## Installation (Codex)
+
+```bash
+codex plugin marketplace add 2C2P/agent-skills --ref main
+codex plugin add 2c2p-payments@2c2p-tools
+```
+
+## Installation (VS Code)
+
+```bash
+curl -fsSL -o /tmp/2c2p-payments.vsix https://github.com/2C2P/agent-skills/releases/download/vscode-v0.1.0/2c2p-payments-0.1.0.vsix && code --install-extension /tmp/2c2p-payments.vsix
+```
+
+> `code --install-extension` accepts an extension ID or a local `.vsix` path — not a URL. The extension must be downloaded first.

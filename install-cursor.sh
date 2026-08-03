@@ -1,6 +1,6 @@
 #!/bin/bash
 # 2C2P Payments Plugin Installer for Cursor
-# Usage: curl -fsSL https://developer.2c2p.com/plugins/install-cursor.sh | bash
+# Usage: curl -fsSL https://raw.githubusercontent.com/2C2P/agent-skills/main/install-cursor.sh | bash
 
 set -e
 
