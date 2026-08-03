@@ -1,0 +1,46 @@
+{
+  "2C2P JWT Sign Python": {
+    "prefix": "2c2p-jwt",
+    "body": [
+      "import jwt",
+      "import os",
+      "",
+      "def sign_2c2p_payload(payload: dict) -> str:",
+      "    return jwt.encode(payload, os.environ['TWOC2P_SECRET_KEY'], algorithm='HS256')",
+      "",
+      "def verify_2c2p_response(token: str) -> dict:",
+      "    return jwt.decode(token, os.environ['TWOC2P_SECRET_KEY'], algorithms=['HS256'])"
+    ],
+    "description": "2C2P JWT signing and verification (Python)"
+  },
+  "2C2P Payment Token Python": {
+    "prefix": "2c2p-payment-token",
+    "body": [
+      "import jwt",
+      "import requests",
+      "import os",
+      "",
+      "def request_payment_token():",
+      "    payload = {",
+      "        'merchantID': os.environ['TWOC2P_MERCHANT_ID'],",
+      "        'invoiceNo': '${1:INV-001}',",
+      "        'description': '${2:Payment description}',",
+      "        'amount': ${3:100.00},",
+      "        'currencyCode': '${4:SGD}',",
+      "        'frontendReturnUrl': '${5:https://yoursite.com/return}',",
+      "        'backendReturnUrl': '${6:https://yoursite.com/webhook}'",
+      "    }",
+      "",
+      "    token = jwt.encode(payload, os.environ['TWOC2P_SECRET_KEY'], algorithm='HS256')",
+      "",
+      "    response = requests.post(",
+      "        f\"{os.environ['TWOC2P_BASE_URL']}/payment/4.3/paymentToken\",",
+      "        json={'payload': token},",
+      "        headers={'Content-Type': 'application/json'}",
+      "    )",
+      "",
+      "    return jwt.decode(response.json()['payload'], os.environ['TWOC2P_SECRET_KEY'], algorithms=['HS256'])"
+    ],
+    "description": "2C2P Payment Token API request (Python)"
+  }
+}

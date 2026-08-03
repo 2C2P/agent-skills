@@ -1,0 +1,75 @@
+{
+  "2C2P JWT Sign": {
+    "prefix": "2c2p-jwt",
+    "body": [
+      "const jwt = require('jsonwebtoken');",
+      "",
+      "function sign2c2pPayload(payload) {",
+      "  return jwt.sign(payload, process.env.TWOC2P_SECRET_KEY, { algorithm: 'HS256' });",
+      "}",
+      "",
+      "function verify2c2pResponse(token) {",
+      "  return jwt.verify(token, process.env.TWOC2P_SECRET_KEY, { algorithms: ['HS256'] });",
+      "}"
+    ],
+    "description": "2C2P JWT signing and verification"
+  },
+  "2C2P Payment Token Request": {
+    "prefix": "2c2p-payment-token",
+    "body": [
+      "const axios = require('axios');",
+      "const jwt = require('jsonwebtoken');",
+      "",
+      "async function requestPaymentToken() {",
+      "  const payload = {",
+      "    merchantID: process.env.TWOC2P_MERCHANT_ID,",
+      "    invoiceNo: '${1:INV-001}',",
+      "    description: '${2:Payment description}',",
+      "    amount: ${3:100.00},",
+      "    currencyCode: '${4:SGD}',",
+      "    frontendReturnUrl: '${5:https://yoursite.com/return}',",
+      "    backendReturnUrl: '${6:https://yoursite.com/webhook}'",
+      "  };",
+      "",
+      "  const token = jwt.sign(payload, process.env.TWOC2P_SECRET_KEY, { algorithm: 'HS256' });",
+      "",
+      "  const response = await axios.post(",
+      "    `${process.env.TWOC2P_BASE_URL}/payment/4.3/paymentToken`,",
+      "    { payload: token },",
+      "    { headers: { 'Content-Type': 'application/json' } }",
+      "  );",
+      "",
+      "  return jwt.verify(response.data.payload, process.env.TWOC2P_SECRET_KEY);",
+      "}"
+    ],
+    "description": "2C2P Payment Token API request"
+  },
+  "2C2P Webhook Handler": {
+    "prefix": "2c2p-webhook",
+    "body": [
+      "const express = require('express');",
+      "const jwt = require('jsonwebtoken');",
+      "",
+      "app.post('/webhook/2c2p', (req, res) => {",
+      "  try {",
+      "    const decoded = jwt.verify(req.body.payload, process.env.TWOC2P_SECRET_KEY);",
+      "    const { invoiceNo, respCode, tranRef } = decoded;",
+      "",
+      "    if (respCode === '0000') {",
+      "      // Payment successful",
+      "      console.log(`Payment success: ${invoiceNo}, ref: ${tranRef}`);",
+      "    } else {",
+      "      // Payment failed",
+      "      console.log(`Payment failed: ${invoiceNo}, code: ${respCode}`);",
+      "    }",
+      "",
+      "    res.status(200).json({ status: 'received' });",
+      "  } catch (err) {",
+      "    console.error('Webhook verification failed:', err);",
+      "    res.status(400).json({ error: 'Invalid payload' });",
+      "  }",
+      "});"
+    ],
+    "description": "2C2P webhook handler for payment notifications"
+  }
+}

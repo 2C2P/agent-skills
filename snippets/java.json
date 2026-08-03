@@ -1,0 +1,47 @@
+{
+  "2C2P JWT Sign Java": {
+    "prefix": "2c2p-jwt",
+    "body": [
+      "import io.jsonwebtoken.Jwts;",
+      "import io.jsonwebtoken.SignatureAlgorithm;",
+      "",
+      "public class TwoC2PUtil {",
+      "    private static final String SECRET_KEY = System.getenv(\"TWOC2P_SECRET_KEY\");",
+      "",
+      "    public static String signPayload(Map<String, Object> payload) {",
+      "        return Jwts.builder()",
+      "            .setClaims(payload)",
+      "            .signWith(SignatureAlgorithm.HS256, SECRET_KEY.getBytes())",
+      "            .compact();",
+      "    }",
+      "",
+      "    public static Claims verifyResponse(String token) {",
+      "        return Jwts.parser()",
+      "            .setSigningKey(SECRET_KEY.getBytes())",
+      "            .parseClaimsJws(token)",
+      "            .getBody();",
+      "    }",
+      "}"
+    ],
+    "description": "2C2P JWT signing and verification (Java)"
+  },
+  "2C2P Payment Token Java": {
+    "prefix": "2c2p-payment-token",
+    "body": [
+      "Map<String, Object> payload = new HashMap<>();",
+      "payload.put(\"merchantID\", System.getenv(\"TWOC2P_MERCHANT_ID\"));",
+      "payload.put(\"invoiceNo\", \"${1:INV-001}\");",
+      "payload.put(\"description\", \"${2:Payment description}\");",
+      "payload.put(\"amount\", ${3:100.00});",
+      "payload.put(\"currencyCode\", \"${4:SGD}\");",
+      "payload.put(\"frontendReturnUrl\", \"${5:https://yoursite.com/return}\");",
+      "payload.put(\"backendReturnUrl\", \"${6:https://yoursite.com/webhook}\");",
+      "",
+      "String token = TwoC2PUtil.signPayload(payload);",
+      "",
+      "// POST to ${TWOC2P_BASE_URL}/payment/4.3/paymentToken",
+      "// Body: { \"payload\": token }"
+    ],
+    "description": "2C2P Payment Token request (Java)"
+  }
+}
