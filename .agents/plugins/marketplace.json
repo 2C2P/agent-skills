@@ -1,7 +1,7 @@
 {
   "name": "2c2p-tools",
   "interface": {
-    "displayName": "Personal"
+    "displayName": "2C2P AI Tools"
   },
   "plugins": [
     {
